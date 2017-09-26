@@ -29,6 +29,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.android.miwok.R.id.numbers;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,13 +40,51 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+        //explicit intent to NumbersActivity
+        TextView numbersView = (TextView) findViewById(numbers);
+        numbersView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        //explicit intent to FamilyActivity
+        TextView familyView = (TextView) findViewById(R.id.family);
+        familyView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+
+        //explicit intent to ColorsActivity
+        TextView colorsView = (TextView) findViewById(R.id.colors);
+        colorsView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+
+        //explicit intent to PhrasesActivity
+        TextView phrasesView = (TextView) findViewById(R.id.phrases);
+        phrasesView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
     }
 
 
-    public void openNumbersList(View view) {
-
-        Intent directToNumbersActivity = new Intent(this, NumbersActivity.class);
-        startActivity(directToNumbersActivity);
-    }
-
-}
+}//end of class

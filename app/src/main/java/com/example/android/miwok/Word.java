@@ -54,4 +54,18 @@ public class Word {
     public int getSoundResourceId() {
         return soundResourceId;
     }
+
+    public void setSoundResourceId(int soundResourceId) {
+        this.soundResourceId = soundResourceId;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "defaultTranslation='" + defaultTranslation + '\'' +
+                ", miwokTranslation='" + miwokTranslation + '\'' +
+                ", imageRescourceId=" + imageRescourceId +
+                ", soundResourceId=" + soundResourceId +
+                '}';
+    }
 }//end of class Word
